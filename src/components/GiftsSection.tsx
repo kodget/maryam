@@ -14,24 +14,36 @@ const GiftsSection = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pb-20 px-4">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Gift the Happy Couple
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Help us start our new journey together with these meaningful gifts
-          </p>
+    <section className="min-h-screen bg-gradient-to-br from-warm-beige via-cream-white to-warm-beige pb-20 px-4 relative">
+      <div className="absolute inset-0 opacity-30">
+        <div className="w-full h-full bg-gradient-to-br from-soft-gold/5 to-muted-rosewood/5"></div>
+      </div>
+      
+      <div className="max-w-[1400px] mx-auto relative z-10">
+        <div className="text-center mb-20">
+          <div className="inline-block">
+            <h2 className="font-display text-5xl font-bold text-deep-mocha mb-6">
+              Bless Their Journey
+            </h2>
+            <div className="w-32 h-px bg-gradient-to-r from-transparent via-soft-gold to-transparent mx-auto mb-8"></div>
+          </div>
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 max-w-3xl mx-auto shadow-xl border border-soft-gold/20">
+            <p className="font-body text-xl text-dark-brown leading-relaxed">
+              Help us start our new journey together with these meaningful gifts, chosen with love and blessed with faith
+            </p>
+          </div>
         </div>
 
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
           {giftItems.map((gift) => (
             <div
               key={gift.id}
-              className="group relative bg-white border border-black rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2 hover:scale-105 p-6"
+              className="group relative bg-cream-white border-2 border-soft-gold/30 rounded-3xl shadow-2xl hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-3 hover:scale-105 p-6"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-soft-gold/10 to-muted-rosewood/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+              <div className="absolute top-4 left-4 w-8 h-8 border border-soft-gold rounded-full flex items-center justify-center">
+                <span className="text-soft-gold text-sm">✨</span>
+              </div>
 
               <div className="relative h-64 overflow-hidden rounded-2xl">
                 <Image
@@ -46,24 +58,26 @@ const GiftsSection = () => {
               </div>
 
               <div className="p-8 relative z-20">
-                <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className="font-feature text-2xl font-bold text-deep-mocha mb-3 group-hover:text-soft-gold transition-colors">
                   {gift.name}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="font-body text-dark-brown/80 mb-6 leading-relaxed">
                   {gift.description}
                 </p>
 
-                <div className="mb-6">
-                  <span className="text-3xl font-bold text-green-600">
-                    ₦{gift.price}
-                  </span>
+                <div className="mb-6 text-center">
+                  <div className="inline-block bg-gradient-to-r from-soft-gold/20 to-muted-rosewood/20 rounded-full px-6 py-2">
+                    <span className="font-display text-2xl font-bold text-muted-rosewood">
+                      ₦{gift.price}
+                    </span>
+                  </div>
                 </div>
 
                 <button
                   onClick={() => handlePayment(gift)}
-                  className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:via-blue-800 hover:to-indigo-800 text-white py-4 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+                  className="w-full bg-gradient-to-r from-deep-mocha to-muted-rosewood hover:from-muted-rosewood hover:to-deep-mocha text-cream-white py-4 rounded-2xl font-body font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 border border-soft-gold/30"
                 >
-                  🎁 Get This Gift
+                  🎁 Bless with This Gift
                 </button>
               </div>
             </div>
